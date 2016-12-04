@@ -143,7 +143,17 @@ class Player {
    * @param {Item/Weapon/Food} item   The item to take.
    * @return {boolean} true/false     Whether player was able to store item in pack.
    */
-
+  takeItem(item) {
+    if(this._pack.length < 3) {
+      this._pack.push(item);
+      console.log("Player " + this.name + " successfully stored " + item.name);
+      return true;
+    }else{
+      console.log("Player " + this.name + "'s pack is full");
+      console.log("Player " + this.name + " did not successfully stored " + item.name);
+      return false;
+    }
+  }
 
   /**
    * Player Class Method => discardItem(item)
