@@ -125,7 +125,9 @@ class Player {
   checkPack() {
     let tempStr = "Player " + this.name + "\'s pack contains: ";
     for(let i = 0; i < this.getPack().length; i++) {
-      if(i === this.getPack().length - 1) {
+      if(this.getPack().length === 1){
+        tempStr += "a " + this.getPack()[i].name;
+      }else if(i === this.getPack().length - 1) {
         tempStr += "and a " + this.getPack()[i].name;
       }else{
         tempStr += "a " + this.getPack()[i].name + ", ";
