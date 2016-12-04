@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 /**
  * Class => Item(name)
  * -----------------------------
@@ -7,7 +8,11 @@
  * @param {string} name     The item's name.
  * @property {string} name
  */
-
+class Item {
+  constructor(name) {
+    this.name = name;
+  }
+}
 
 /**
  * Class => Weapon(name, damage)
