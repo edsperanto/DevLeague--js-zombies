@@ -211,7 +211,17 @@ class Player {
    * @name equip
    * @param {Weapon} itemToEquip  The weapon item to equip.
    */
-
+  equip(itemToEquip) {
+    if(itemToEquip instanceof Weapon && this._pack.indexOf(itemToEquip) !== -1) {
+      if(this.equipped) {
+        this._pack.push(this.equipped);
+      }
+      this._pack.splice(this._pack.indexOf(itemToEquip), 1);
+      this.equipped = itemToEquip;
+    }else{
+      return false;
+    }
+  }
 
   /**
    * Player Class Method => eat(itemToEat)
