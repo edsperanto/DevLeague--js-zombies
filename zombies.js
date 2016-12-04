@@ -180,7 +180,17 @@ class Player {
    * @param {Item/Weapon/Food} item   The item to discard.
    * @return {boolean} true/false     Whether player was able to remove item from pack.
    */
-
+  discardItem(item) {
+    let pos = this._pack.indexOf(item);
+    if(pos !== -1) {
+      this._pack.splice(pos, 1);
+      console.log("Player " + this.name + " has discarded " + item.name);
+      return true;
+    }else{
+      console.log("Item " + item.name + " was not found");
+      return false;
+    }
+  }
 
   /**
    * Player Class Method => equip(itemToEquip)
